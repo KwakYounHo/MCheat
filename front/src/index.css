@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 188 20% 90%;
+    --foreground: 200 50% 3%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 188 20% 10%;
+      --foreground: 200 20% 96%;
+    }
+  }
+}
+
+body {
+  @apply bg-background
+}
