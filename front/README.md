@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/logo192.png" width=200 height=200>
+  <img src="./public/logo512.png" width=200 height=200>
 </p>
 
 # 🌐 MCheat(가제)
