@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // components
-import Main from "@/components/Main/page";
+import Search from "@/components/Search/page";
 import NotFoundPage from "@/components/Fallback/page";
 
 // style sheet
@@ -13,7 +13,7 @@ export default function App() {
     <div className={"text-foreground"}>
       <Router>
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Search />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
