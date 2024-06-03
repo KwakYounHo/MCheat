@@ -1,23 +1,38 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { navList } from "@/model/Header/navList";
+import { Link, useLocation } from "react-router-dom";
+import { type NavItem, navList } from "@/model/Header/navList";
 
-import menuOpen from "@/img/menu-open.svg";
-import menuClose from "@/img/menu-close.svg";
+import "@/components/Header/header.css";
+
+import { ReactComponent as MenuOpen } from "@/img/menu-open.svg";
+import { ReactComponent as MenuClose } from "@/img/menu-close.svg";
 
 export default function Header(): JSX.Element {
+  const location = useLocation();
+
   const [menu, setMenu] = useState<boolean>(false);
 
+  // navigation list grouping
+  const navGroup = navList.reduce((acc: { [key: string]: NavItem[] }, item) => {
+    const { tag } = item;
+
+    if (!acc[tag]) {
+      acc[tag] = [];
+    }
+
+    acc[tag].push(item);
+
+    return acc;
+  }, {});
+
+  // menu-open control function
   function menuControl() {
     setMenu(!menu);
   }
 
   return (
-    <header
-      className={
-        "flex items-center h-[60px] md:h-[85px] w-full bg-background stick z-10 bg-slate-800 top-0 text-white"
-      }
-    >
+    <header>
+      {/* Logo */}
       <div className={"mx-10"}>
         <Link to={"/"}>
           <img
@@ -29,7 +44,10 @@ export default function Header(): JSX.Element {
           />
         </Link>
       </div>
-      <nav className={"w-full relative"}>
+
+      {/* nav List */}
+      <nav className={"w-full"}>
+        {/* big size browser */}
         <div className={"hidden md:block"}>
           <ul className={"flex gap-10 lg:text-xl md:text-base"}>
             {navList.map((element, key) => {
@@ -41,22 +59,65 @@ export default function Header(): JSX.Element {
             })}
           </ul>
         </div>
-        <div className={"md:hidden absolute right-10 -top-4"}>
-          <button onClick={menuControl}>
-            {menu ? (
-              <img src={menuClose} alt={"close menu"} className={"w-8"} />
-            ) : (
-              <img src={menuOpen} alt="open menu" className={"w-8"} />
-            )}
+
+        {/* mobile size browser start */}
+        <div className={"md:hidden w-full flex justify-end"}>
+          {menu && (
+            <div
+              className={
+                "absolute w-screen h-screen top-0 left-0 z-[20] bg-background/80"
+              }
+              onClick={menuControl}
+            />
+          )}
+          <button onClick={menuControl} className={"mr-10"}>
+            {!menu && <MenuOpen className={"w-8 h-8 fill-white"} />}
           </button>
+          {/* menu open */}
           {menu ? (
-            <div className={"absolute bg-red-300 w-32 -right-10 top-11 -z-10"}>
-              <p>요기 메뉴</p>
+            <div className={"header-modal menu-in max-h-screen"}>
+              {/* modal header */}
+              <div className="w-full flex justify-between border-b pb-2 border-foreground">
+                <p className={"capitalize text-4xl font-bold"}>menu</p>
+                <button onClick={menuControl} className={"mr-4"}>
+                  {menu && <MenuClose className={"w-8 h-8 fill-foreground"} />}
+                </button>
+              </div>
+              {/* menu list */}
+              <div className={"flex flex-col gap-5"}>
+                {Object.keys(navGroup).map((tag, i) => {
+                  return (
+                    <div key={i}>
+                      <p className={"text-2xl uppercase mb-2 font-semibold"}>
+                        {tag}
+                      </p>
+                      <ul className={"ml-4"}>
+                        {navGroup[tag].map((element, i) => {
+                          console.log(location.pathname === element.to);
+                          return (
+                            <li
+                              key={i}
+                              className={`capitalize text-lg border-l-2 pl-4 ${
+                                location.pathname === element.to
+                                  ? "border-red-300 text-red-300"
+                                  : "border-foreground"
+                              }`}
+                            >
+                              <Link to={element.to}>{element.name}</Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           ) : (
             <></>
           )}
         </div>
+        {/* mobile size browser end */}
       </nav>
     </header>
   );
