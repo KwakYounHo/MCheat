@@ -1,0 +1,3 @@
+.search-container {
+  @apply container m-auto p-4 min-h-[calc(100vh-60px)] md:min-h-[calc(100vh-85px)] flex flex-col flex-1 justify-center items-center gap-5 md:gap-10
+}
