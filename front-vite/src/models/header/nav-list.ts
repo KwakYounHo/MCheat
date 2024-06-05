@@ -38,14 +38,14 @@ export const navList: NavList = {
     {
       title: "contact",
       href: "/contact",
-      descriptiion: "",
+      descriptiion: "Got any questions? Feel free to reach out to us!",
     },
   ],
   support: [
     {
       title: "support",
       href: "/support",
-      descriptiion: "",
+      descriptiion: "Did we help you? Please support us!",
     },
   ],
 };

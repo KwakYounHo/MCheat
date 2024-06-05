@@ -1,5 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import { type NavList, navList } from "@/models/header/nav-list";
+import { cn } from "@/lib/utils";
 
 import {
   NavigationMenu,
@@ -8,17 +10,22 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
-
-import { type NavList, navList } from "@/models/header/nav-list";
 
 export default function NavBar() {
   return (
+    // desktop menu
     <NavigationMenu className={"hidden lg:block"}>
       <NavigationMenuList>
         <MenuItem arr={navList} />
       </NavigationMenuList>
+      <div className={"absolute -left-1/3 top-[100%]"}>
+        <NavigationMenuViewport />
+      </div>
     </NavigationMenu>
+
+    // other menu
   );
 }
 
@@ -52,15 +59,16 @@ const MenuItem = ({ arr }: { arr: NavList }): JSX.Element => {
 const LinkItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentProps<"a">
->(({ title, children, ...props }, ref) => {
+>(({ title, children, className, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
         <Link
           to={props.href!}
-          className={
-            "block tansition-colors duration-100 hover:bg-accent p-3 hover:text-accent-foreground rounded-md"
-          }
+          className={cn(
+            "block tansition-colors duration-100 hover:bg-accent p-3 hover:text-accent-foreground rounded-md focus:bg-accent focus:text-accent-foreground pointer-events-auto",
+            className
+          )}
           ref={ref}
         >
           <div className="capitalize">{title}</div>
