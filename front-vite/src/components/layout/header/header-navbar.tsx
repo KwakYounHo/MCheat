@@ -11,7 +11,10 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuViewport,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+
+import style from "./header-navbar.module.css";
 
 export default function NavBar() {
   return (
@@ -19,10 +22,15 @@ export default function NavBar() {
     <NavigationMenu className={"hidden lg:block"}>
       <NavigationMenuList>
         <MenuItem arr={navList} />
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link to={navList.support[0].href} className={"capitalize"}>
+              {navList.support[0].title}
+            </Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
       </NavigationMenuList>
-      <div className={"absolute -left-1/3 top-[100%]"}>
-        <NavigationMenuViewport />
-      </div>
+      <NavigationMenuViewport className={cn(style.viewport)} />
     </NavigationMenu>
 
     // other menu
@@ -33,13 +41,14 @@ const MenuItem = ({ arr }: { arr: NavList }): JSX.Element => {
   return (
     <>
       {(Object.keys(arr) as Array<keyof NavList>).map((property) => {
+        if (property === "support") return <></>;
         return (
           <NavigationMenuItem>
             <NavigationMenuTrigger className={"capitalize"}>
               {property}
             </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid grid-cols-2 w-[500px] p-4 gap-3">
+            <NavigationMenuContent className={style.navigationContent}>
+              <ul>
                 {navList[property].map((e) => {
                   return (
                     <LinkItem title={e.title} href={e.href}>
@@ -65,14 +74,13 @@ const LinkItem = React.forwardRef<
       <NavigationMenuLink asChild>
         <Link
           to={props.href!}
-          className={cn(
-            "block tansition-colors duration-100 hover:bg-accent p-3 hover:text-accent-foreground rounded-md focus:bg-accent focus:text-accent-foreground pointer-events-auto",
-            className
-          )}
+          className={cn(style.navigationLinkAnchor, className)}
           ref={ref}
         >
           <div className="capitalize">{title}</div>
-          <p className={"text-sm leading-tight text-muted-foreground"}>
+          <p
+            className={cn(style.navigationLinkDescription, "tansition-colors")}
+          >
             {children}
           </p>
         </Link>
