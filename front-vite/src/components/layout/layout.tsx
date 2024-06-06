@@ -11,7 +11,13 @@ export default function Layout({
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main
+        className={
+          "min-h-[calc(100vh-60px)] flex flex-col items-center justify-center"
+        }
+      >
+        {children}
+      </main>
       <Footer />
     </>
   );
