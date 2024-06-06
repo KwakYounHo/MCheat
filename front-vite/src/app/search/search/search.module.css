@@ -1,0 +1,27 @@
+.logo {
+  @apply w-1/2 max-w-[400px] lg:mb-10 mb-5
+}
+
+.formContent {
+  @apply flex flex-col justify-center items-center
+}
+
+.formFieldWrapper {
+  @apply w-screen flex flex-col items-center gap-4
+}
+
+.formItem {
+  @apply flex justify-center w-screen
+}
+
+.inputButtonWrapper {
+  @apply relative flex justify-center w-full max-w-[1200px] mx-10 h-screen max-h-[80px]
+}
+
+.inputContent {
+  @apply rounded-full h-full pl-6 pr-[85px] w-full min-w-[190px] lg:text-3xl lg:p-10 md:text-2xl text-lg placeholder:text-sm
+}
+
+.buttonContent {
+  @apply absolute top-0 right-0 rounded-full w-full h-full min-w-[80px] max-w-[80px] max-h-[80px]
+}

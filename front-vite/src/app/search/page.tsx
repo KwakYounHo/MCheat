@@ -1,3 +1,12 @@
+import { Routes, Route } from "react-router-dom";
+import SearchForm from "@/app/search/search/search";
+import NotFound from "@/app/not-found/page";
+
 export default function Search() {
-  return <p>I am search page main</p>;
+  return (
+    <Routes>
+      <Route path={"/"} element={<SearchForm />} />
+      <Route path={"*"} element={<NotFound />} />
+    </Routes>
+  );
 }
