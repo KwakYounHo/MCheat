@@ -13,7 +13,7 @@ export default function Layout({
       <Header />
       <main
         className={
-          "min-h-[calc(100vh-60px)] flex flex-col items-center justify-center"
+          "w-full min-h-[calc(100vh-60px)] flex flex-col items-center justify-center"
         }
       >
         {children}
