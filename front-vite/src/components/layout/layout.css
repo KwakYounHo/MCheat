@@ -1,3 +1,7 @@
 header {
   @apply w-full h-[60px] sticky top-0 flex justify-around items-center border-b
 }
+
+main {
+  @apply w-full min-h-[calc(100vh-60px)] flex flex-col items-center justify-center
+}
