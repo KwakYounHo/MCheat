@@ -112,7 +112,7 @@ const MenuItem = ({ arr }: { arr: NavList }): JSX.Element => {
   return (
     <>
       {(Object.keys(arr) as Array<keyof NavList>).map((property) => {
-        if (property === "support") return <></>;
+        if (property === "support") return null;
         return (
           <NavigationMenuItem key={property}>
             <NavigationMenuTrigger className={"capitalize"}>
