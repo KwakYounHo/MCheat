@@ -17,8 +17,8 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path={"/"} element={<RouteToSearch />} />
-          <Route path={"/home"} element={<Home />} />
-          <Route path={"/search"} element={<Search />} />
+          <Route path={"/home/*"} element={<Home />} />
+          <Route path={"/search/*"} element={<Search />} />
           <Route path={"*"} element={<NotFound />} />
         </Routes>
       </Layout>
