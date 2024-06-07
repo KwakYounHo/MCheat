@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { type SchemaType, schema } from "./search-form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
 
 import LogoFace from "@/assets/img/Logo-face.png";
 import {
@@ -16,12 +17,13 @@ import { Search } from "lucide-react";
 import style from "./search.module.css";
 
 export default function SearchForm() {
+  const navigate = useNavigate();
   const form = useForm<SchemaType>({
     resolver: zodResolver(schema),
   });
 
   function onSubmit(value: SchemaType) {
-    console.log(value);
+    navigate(`/search/find/${value.searchScammer}`);
   }
 
   return (
