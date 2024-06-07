@@ -18,10 +18,10 @@
   @apply relative flex justify-center w-full max-w-[1200px] mx-10 h-screen max-h-[80px]
 }
 
-.inputContent {
+.inputButtonWrapper .inputContent {
   @apply rounded-full h-full pl-6 pr-[85px] w-full min-w-[190px] lg:text-3xl lg:p-10 md:text-2xl text-lg placeholder:text-sm
 }
 
-.buttonContent {
+.inputButtonWrapper .buttonContent {
   @apply absolute top-0 right-0 rounded-full w-full h-full min-w-[80px] max-w-[80px] max-h-[80px]
 }

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import SearchForm from "@/app/search/search/search";
+import SearchForm from "@/app/search/search-form/search";
 import NotFound from "@/app/not-found/page";
 
 export default function Search() {
