@@ -7,7 +7,7 @@ export default function Search() {
   return (
     <Routes>
       <Route path={"/"} element={<SearchForm />} />
-      <Route path={"/search/*"} element={<Find />} />
+      <Route path={"/find/*"} element={<Find />} />
       <Route path={"*"} element={<NotFound />} />
     </Routes>
   );
