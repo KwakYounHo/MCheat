@@ -23,7 +23,8 @@ export default function SearchForm() {
   });
 
   function onSubmit(value: SchemaType) {
-    navigate(`/search/find/${value.searchScammer}`);
+    const encodedURI = encodeURIComponent(value.searchScammer);
+    navigate(`/search/find/${encodedURI}`);
   }
 
   return (
