@@ -1,13 +1,17 @@
 .logo {
-  @apply w-1/2 max-w-[400px] lg:mb-10 mb-5
+  @apply w-1/2 max-w-[400px]
+}
+
+.description {
+  @apply text-muted-foreground text-sm
 }
 
 .formContent {
-  @apply flex flex-col justify-center items-center
+  @apply w-full flex flex-col justify-center items-center
 }
 
 .formFieldWrapper {
-  @apply w-screen flex flex-col items-center gap-4
+  @apply flex flex-col items-center gap-4
 }
 
 .formItem {

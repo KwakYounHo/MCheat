@@ -4,6 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { type SchemaType, schema } from "../search-form/search-form-schema";
 import { useNavigate } from "react-router-dom";
 
+// model
+import { placeholder } from "@/models/search/placeholder";
+
 // ui
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
@@ -39,12 +42,12 @@ export default function CardForm({ className = "" }: { className: string }) {
               <>
                 <FormItem>
                   <FormLabel>Research</FormLabel>
+                  <p className={"text-muted-foreground text-sm"}>
+                    Plase Enter it without '-'
+                  </p>
                   <FormControl>
                     <div className={"w-full grid grid-cols-[1fr_55px] gap-4"}>
-                      <Input
-                        {...field}
-                        placeholder={"Bank account OR Mobile number"}
-                      />
+                      <Input {...field} placeholder={placeholder} />
                       <Button type="submit">
                         <Search className={"w-[25px] h-[25px]"} />
                       </Button>

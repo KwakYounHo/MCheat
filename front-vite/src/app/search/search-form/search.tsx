@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
+import { placeholder } from "@/models/search/placeholder";
+
 import LogoFace from "@/assets/img/Logo-face.png";
 import {
   Form,
@@ -34,6 +36,7 @@ export default function SearchForm() {
         <title>Search :: SScammer</title>
       </Helmet>
       <img src={LogoFace} alt="logo-img" className={style.logo} />
+      <p className={style.description}>*Please Enter it without '-'</p>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -51,7 +54,7 @@ export default function SearchForm() {
                       <div className={style.inputButtonWrapper}>
                         <Input
                           {...field}
-                          placeholder={"Bank account OR Mobile number"}
+                          placeholder={placeholder}
                           className={style.inputContent}
                         />
                         <Button type={"submit"} className={style.buttonContent}>
