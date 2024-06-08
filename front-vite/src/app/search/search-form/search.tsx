@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { type SchemaType, schema } from "./search-form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 import LogoFace from "@/assets/img/Logo-face.png";
 import {
@@ -29,6 +30,9 @@ export default function SearchForm() {
 
   return (
     <>
+      <Helmet>
+        <title>Search :: SScammer</title>
+      </Helmet>
       <img src={LogoFace} alt="logo-img" className={style.logo} />
       <Form {...form}>
         <form
