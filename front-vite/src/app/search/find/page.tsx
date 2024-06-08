@@ -33,6 +33,8 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import { Plus } from "lucide-react";
 
+import style from "./find.module.css";
+
 type ResultLengthProvider = {
   resultLength: number;
   setResultLength: (length: number) => void;
@@ -73,7 +75,7 @@ export default function Find() {
             <CardDescription>Your Keyword : {keyword}</CardDescription>
           </CardHeader>
           <CardContent>
-            <Table>
+            <Table className={style.tableWrapper}>
               <TableHeader>
                 <TableRow className={"capitalize"}>
                   <TableHead>name</TableHead>
@@ -134,19 +136,9 @@ function TableRowLayout({ keyword }: { keyword: string }) {
             <React.Suspense
               fallback={
                 <TableRow>
-                  <TableCell colSpan={4} className={"relative"}>
-                    <div
-                      className={
-                        "relative flex flex-col justify-center items-center"
-                      }
-                    >
-                      <p
-                        className={
-                          "absolute w-full text-center text-muted-foreground"
-                        }
-                      >
-                        Loading...
-                      </p>
+                  <TableCell colSpan={4}>
+                    <div className={style.tableIsLoadingWrapper}>
+                      <p>Loading...</p>
                       <Skeleton className={"w-full h-[50px]"} />
                     </div>
                   </TableCell>
@@ -210,11 +202,7 @@ function TableData({ keyword }: { keyword: string }) {
             <TableRow>
               <TableCell colSpan={4}>
                 <Link to={"/register"} className={"w-full"}>
-                  <div
-                    className={
-                      "flex flex-col justify-center items-center text-muted-foreground border-2 border-dashed h-16"
-                    }
-                  >
+                  <div className={style.registerButtonWrapper}>
                     <Plus width={25} height={25} />
                     <p>Register Fraud Case</p>
                   </div>

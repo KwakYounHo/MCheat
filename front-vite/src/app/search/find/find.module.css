@@ -1,0 +1,15 @@
+.tableWrapper .tableIsLoadingWrapper {
+  @apply relative flex flex-col justify-center items-center
+}
+
+.tableIsLoadingWrapper p {
+  @apply absolute w-full text-center text-muted-foreground top-[30%]
+}
+
+.tableWrapper .registerButtonWrapper {
+  @apply flex flex-col justify-center items-center text-muted-foreground border-2 border-dashed h-16
+}
+
+.tableWrapper th {
+  @apply text-nowrap
+}
