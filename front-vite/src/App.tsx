@@ -13,6 +13,8 @@ import NotFound from "@/app/not-found/page";
 import Home from "@/app/home/page";
 import Search from "@/app/search/page";
 
+import "./app.css";
+
 const queryClient = new QueryClient();
 
 export default function App() {
