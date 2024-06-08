@@ -12,6 +12,7 @@ import RouteToSearch from "@/route-search";
 import NotFound from "@/app/not-found/page";
 import Home from "@/app/home/page";
 import Search from "@/app/search/page";
+import Register from "@/app/register/page";
 
 import "./app.css";
 
@@ -27,6 +28,7 @@ export default function App() {
               <Route path={"/"} element={<RouteToSearch />} />
               <Route path={"/home/*"} element={<Home />} />
               <Route path={"/search/*"} element={<Search />} />
+              <Route path={"/register"} element={<Register />} />
               <Route path={"*"} element={<NotFound />} />
             </Routes>
           </Layout>
