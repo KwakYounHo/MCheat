@@ -2,6 +2,10 @@
   @apply relative flex flex-col justify-center items-center
 }
 
+.tableWrapper .searchNull {
+  @apply text-center font-semibold text-base
+}
+
 .tableIsLoadingWrapper p {
   @apply absolute w-full text-center text-muted-foreground top-[30%]
 }

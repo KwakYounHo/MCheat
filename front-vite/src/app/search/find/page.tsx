@@ -193,7 +193,7 @@ function TableData({ keyword }: { keyword: string }) {
             <TableRow>
               <TableCell colSpan={4} className={"border-b"}>
                 <div className={"py-2"}>
-                  <p className={"text-center"}>
+                  <p className={style.searchNull}>
                     There have been no cases of scam registered so far.
                   </p>
                 </div>
