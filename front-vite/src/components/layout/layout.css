@@ -3,5 +3,5 @@ header {
 }
 
 main {
-  @apply w-full min-h-[calc(100vh-60px)] flex flex-col items-center justify-center
+  @apply container w-full min-h-[calc(100vh-60px)] flex flex-col items-center justify-center
 }

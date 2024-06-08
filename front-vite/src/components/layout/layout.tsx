@@ -11,7 +11,7 @@ export default function Layout({
   return (
     <>
       <Header />
-      <main className={"container"}>{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   );
