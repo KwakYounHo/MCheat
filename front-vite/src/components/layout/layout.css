@@ -1,5 +1,5 @@
 header {
-  @apply w-full h-[60px] sticky top-0 flex justify-around items-center border-b
+  @apply w-full h-[60px] sticky top-0 flex justify-around items-center border-b bg-background
 }
 
 main {
