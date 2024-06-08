@@ -31,6 +31,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Plus } from "lucide-react";
 
 type ResultLengthProvider = {
   resultLength: number;
@@ -196,15 +197,31 @@ function TableData({ keyword }: { keyword: string }) {
             );
           })
         ) : (
-          <TableRow>
-            <TableCell colSpan={4} className={"border-b"}>
-              <div className={"py-2"}>
-                <p className={"text-center"}>
-                  There have been no cases of scam registered so far.
-                </p>
-              </div>
-            </TableCell>
-          </TableRow>
+          <>
+            <TableRow>
+              <TableCell colSpan={4} className={"border-b"}>
+                <div className={"py-2"}>
+                  <p className={"text-center"}>
+                    There have been no cases of scam registered so far.
+                  </p>
+                </div>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell colSpan={4}>
+                <Link to={"/register"} className={"w-full"}>
+                  <div
+                    className={
+                      "flex flex-col justify-center items-center text-muted-foreground border-2 border-dashed h-16"
+                    }
+                  >
+                    <Plus width={25} height={25} />
+                    <p>Register Fraud Case</p>
+                  </div>
+                </Link>
+              </TableCell>
+            </TableRow>
+          </>
         )}
       </>
     );
