@@ -63,7 +63,7 @@ export default function SearchForm() {
                       </div>
                     </FormControl>
                   </FormItem>
-                  <FormMessage className={"lg:text-2xl text-lg"} />
+                  <FormMessage className={"text-lg"} />
                 </div>
               );
             }}

@@ -23,7 +23,7 @@
 }
 
 .inputButtonWrapper .inputContent {
-  @apply rounded-full h-full pl-6 pr-[85px] w-full min-w-[190px] lg:text-3xl lg:p-10 md:text-2xl text-lg placeholder:text-sm
+  @apply rounded-full h-full pl-6 pr-[85px] w-full min-w-[190px] text-lg placeholder:text-sm
 }
 
 .inputButtonWrapper .buttonContent {
