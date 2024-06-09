@@ -1,1 +1,1 @@
-export const placeholder = `Mobile OR Bank Account ( without '-' )`;
+export const placeholder = `Mobile or Bank Account`;
