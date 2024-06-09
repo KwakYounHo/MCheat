@@ -33,8 +33,11 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import { Plus } from "lucide-react";
 
+// style-sheet
 import style from "./find.module.css";
 
+// ! list's length define after searching
+// list length context
 type ResultLengthProvider = {
   resultLength: number;
   setResultLength: (length: number) => void;
@@ -54,6 +57,7 @@ export function useResultLengthContext() {
   return context;
 }
 
+// find page root component
 export default function Find() {
   const { keyword } = useParams();
   const [resultLength, setResultLength] = React.useState<number>(0);
@@ -104,15 +108,18 @@ export default function Find() {
   );
 }
 
+// find table root component
 function TableRowLayout({ keyword }: { keyword: string }) {
   return (
     <QueryErrorResetBoundary>
       {({ reset }) => {
+        // react-query error boundary
         return (
           <ErrorBoundary
             onReset={reset}
             fallbackRender={({ resetErrorBoundary }) => {
               return (
+                // Fetch error component
                 <TableRow className={"text-center"}>
                   <TableCell colSpan={4}>
                     <p>Something Error...</p>
@@ -135,10 +142,11 @@ function TableRowLayout({ keyword }: { keyword: string }) {
           >
             <React.Suspense
               fallback={
+                // skeleton component
                 <TableRow>
                   <TableCell colSpan={4}>
                     <div className={style.tableIsLoadingWrapper}>
-                      <p>Loading...</p>
+                      <p>( {keyword} ) Searching...</p>
                       <Skeleton className={"w-full h-[50px]"} />
                     </div>
                   </TableCell>
@@ -154,6 +162,7 @@ function TableRowLayout({ keyword }: { keyword: string }) {
   );
 }
 
+// find table's data component
 function TableData({ keyword }: { keyword: string }) {
   const { setResultLength } = useResultLengthContext();
   const queryKey = [keyword];
@@ -180,6 +189,7 @@ function TableData({ keyword }: { keyword: string }) {
         {data.length > 0 ? (
           data.map((e) => {
             return (
+              // case data list
               <TableRow key={e.sccamer_id}>
                 <TableCell>{e.name}</TableCell>
                 <TableCell>{e.bank_account}</TableCell>
@@ -189,6 +199,8 @@ function TableData({ keyword }: { keyword: string }) {
             );
           })
         ) : (
+          // no case so far
+          // add insert button
           <>
             <TableRow>
               <TableCell colSpan={4} className={"border-b"}>
