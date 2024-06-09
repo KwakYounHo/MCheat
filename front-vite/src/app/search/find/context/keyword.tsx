@@ -27,6 +27,6 @@ export function KeywordContextProvider({
 export function useKeywordContext() {
   const context = useContext(keywordContext);
   if (!context)
-    throw new Error("keywordContext must be used in Context provider");
+    throw new Error("keywordContext must be used with in Context provider");
   return context;
 }
