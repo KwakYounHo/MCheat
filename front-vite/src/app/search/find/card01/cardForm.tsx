@@ -1,7 +1,10 @@
 // package
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { type SchemaType, schema } from "../search-form/search-form-schema";
+import {
+  type SchemaType,
+  schema,
+} from "@/app/search/search-form/search-form-schema";
 import { useNavigate } from "react-router-dom";
 
 // model
