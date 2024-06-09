@@ -72,10 +72,10 @@ export default function Find() {
         <title>{keyword} :: SScammer-search</title>
       </Helmet>
       <resultLengthContext.Provider value={value}>
-        <p className={"text-4xl font-bold mb-10"}>Search - Scammer</p>
+        <p className={"text-4xl font-bold mb-10"}>Scam cases</p>
         <Card className={"w-full animation-in"}>
           <CardHeader>
-            <CardTitle>Search Result</CardTitle>
+            <CardTitle>Search Results</CardTitle>
             <CardDescription>Your Keyword : {keyword}</CardDescription>
           </CardHeader>
           <CardContent>
@@ -216,7 +216,7 @@ function TableData({ keyword }: { keyword: string }) {
                 <Link to={"/register"} className={"w-full"}>
                   <div className={style.registerButtonWrapper}>
                     <Plus width={25} height={25} />
-                    <p>Register Fraud Case</p>
+                    <p>Register Scam Case</p>
                   </div>
                 </Link>
               </TableCell>

@@ -16,12 +16,12 @@ export const navList: NavList = {
       title: "s-search",
       href: "/search",
       descriptiion:
-        "Check for accounts and phone numbers with a history of fraud",
+        "Check for accounts and phone numbers with a history of scam",
     },
     {
       title: "s-registration",
       href: "/register",
-      descriptiion: "Please share the details of the fraud with others",
+      descriptiion: "Please share the details of the scam with others",
     },
   ],
   main: [
