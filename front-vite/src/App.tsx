@@ -11,7 +11,8 @@ import RouteToSearch from "@/route-search";
 // pages
 import NotFound from "@/app/not-found/page";
 import Home from "@/app/home/page";
-import Search from "@/app/search/page";
+import SearchRouter from "@/app/search/router";
+import FindRouter from "@/app/find/router";
 import Register from "@/app/register/page";
 
 import "./app.css";
@@ -27,7 +28,8 @@ export default function App() {
             <Routes>
               <Route path={"/"} element={<RouteToSearch />} />
               <Route path={"/home/*"} element={<Home />} />
-              <Route path={"/search/*"} element={<Search />} />
+              <Route path={"/search/*"} element={<SearchRouter />} />
+              <Route path={"/find/*"} element={<FindRouter />} />
               <Route path={"/register"} element={<Register />} />
               <Route path={"*"} element={<NotFound />} />
             </Routes>

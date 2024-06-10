@@ -5,7 +5,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { Link } from "react-router-dom";
 
 // context
-import { useKeywordContext } from "@/app/search/find/context/keyword";
+import { useKeywordContext } from "@/app/find/keyword/context/keyword";
 
 // comp
 import TableData from "./table-data";
@@ -15,7 +15,7 @@ import { TableRow, TableCell } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
-import style from "@/app/search/find/find.module.css";
+import style from "@/app/find/keyword/keyword.module.css";
 
 // find table root component
 export default function TableRowLayout() {

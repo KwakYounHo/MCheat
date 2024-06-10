@@ -1,10 +1,7 @@
 // package
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  type SchemaType,
-  schema,
-} from "@/app/search/search-form/search-form-schema";
+import { type SchemaType, schema } from "@/app/search/main/search-form-schema";
 import { useNavigate } from "react-router-dom";
 
 // model
@@ -31,7 +28,10 @@ export default function CardForm({ className = "" }: { className: string }) {
 
   function onSubmit(value: SchemaType) {
     const encodedURI = encodeURIComponent(value.searchScammer);
-    navigate(`/search/find/${encodedURI}`);
+    form.reset({
+      searchScammer: "",
+    });
+    navigate(`/find/${encodedURI}`);
   }
   return (
     <Form {...form}>

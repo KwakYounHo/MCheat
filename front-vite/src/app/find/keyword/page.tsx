@@ -5,9 +5,9 @@ import { useParams } from "react-router-dom";
 
 import { useKeywordContext } from "./context/keyword";
 
-import FindCard01 from "@/app/search/find/card01/card";
+import FindCard01 from "@/app/find/keyword/card01/card";
 
-export default function FindPageContent() {
+export default function KeywordLayout() {
   const { setKeyword } = useKeywordContext();
   const { keyword } = useParams();
   useEffect(() => {

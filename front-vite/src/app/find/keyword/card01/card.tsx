@@ -1,6 +1,6 @@
 // context
-import { useResultLengthContext } from "@/app/search/find/context/result-length";
-import { useKeywordContext } from "@/app/search/find/context/keyword.tsx";
+import { useResultLengthContext } from "@/app/find/keyword/context/result-length";
+import { useKeywordContext } from "@/app/find/keyword/context/keyword.tsx";
 
 // component
 import CardForm from "./cardForm.tsx";
@@ -24,7 +24,7 @@ import {
   TableCaption,
 } from "@/components/ui/table";
 
-import style from "../find.module.css";
+import style from "@/app/find/keyword/keyword.module.css";
 
 // find page card-search table
 export default function FindCard01() {

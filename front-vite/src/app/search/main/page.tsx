@@ -19,7 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import style from "./search.module.css";
 
-export default function SearchForm() {
+export default function SearchPage() {
   const navigate = useNavigate();
   const form = useForm<SchemaType>({
     resolver: zodResolver(schema),
@@ -27,7 +27,7 @@ export default function SearchForm() {
 
   function onSubmit(value: SchemaType) {
     const encodedURI = encodeURIComponent(value.searchScammer);
-    navigate(`/search/find/${encodedURI}`);
+    navigate(`/find/${encodedURI}`);
   }
 
   return (
