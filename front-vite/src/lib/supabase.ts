@@ -14,21 +14,21 @@ export type Database = {
           bank_account: string | null
           mobile_number: string | null
           name: string | null
-          place_of_issues: string
+          place_of_issue_occur: string
           sccamer_id: number
         }
         Insert: {
           bank_account?: string | null
           mobile_number?: string | null
           name?: string | null
-          place_of_issues: string
+          place_of_issue_occur: string
           sccamer_id?: number
         }
         Update: {
           bank_account?: string | null
           mobile_number?: string | null
           name?: string | null
-          place_of_issues?: string
+          place_of_issue_occur?: string
           sccamer_id?: number
         }
         Relationships: []

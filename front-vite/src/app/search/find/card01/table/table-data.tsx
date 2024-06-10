@@ -47,35 +47,33 @@ export default function TableData() {
                 <TableCell>{e.name}</TableCell>
                 <TableCell>{e.bank_account}</TableCell>
                 <TableCell>{e.mobile_number}</TableCell>
-                <TableCell>{e.place_of_issues}</TableCell>
+                <TableCell>{e.place_of_issue_occur}</TableCell>
               </TableRow>
             );
           })
         ) : (
           // no case so far
           // add insert button
-          <>
-            <TableRow>
-              <TableCell colSpan={4} className={"border-b"}>
-                <div className={"py-2"}>
-                  <p className={style.searchNull}>
-                    There have been no cases of scam registered so far.
-                  </p>
-                </div>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell colSpan={4}>
-                <Link to={"/register"} className={"w-full"}>
-                  <div className={style.registerButtonWrapper}>
-                    <Plus width={25} height={25} />
-                    <p>Register Scam Case</p>
-                  </div>
-                </Link>
-              </TableCell>
-            </TableRow>
-          </>
+          <TableRow>
+            <TableCell colSpan={4} className={"border-b"}>
+              <div className={"py-2"}>
+                <p className={style.searchNull}>
+                  There have been no cases of scam registered so far.
+                </p>
+              </div>
+            </TableCell>
+          </TableRow>
         )}
+        <TableRow>
+          <TableCell colSpan={4}>
+            <Link to={"/register"} className={"w-full"}>
+              <div className={style.registerButtonWrapper}>
+                <Plus width={25} height={25} />
+                <p>Register Scam Case</p>
+              </div>
+            </Link>
+          </TableCell>
+        </TableRow>
       </>
     );
   }
