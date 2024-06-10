@@ -1,0 +1,23 @@
+.formWrapper {
+  @apply w-full flex flex-col gap-6
+}
+
+.formWrapper label {
+  @apply capitalize
+}
+
+.title {
+  @apply text-4xl font-bold my-10 mr-auto
+}
+
+.formWrapper textarea {
+  resize: none;
+}
+
+.formWrapper strong {
+  @apply text-destructive
+}
+
+.formWrapper .buttonWrapper {
+  @apply flex justify-center w-full col-span-full mb-6
+}
