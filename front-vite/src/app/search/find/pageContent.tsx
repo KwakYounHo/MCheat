@@ -18,7 +18,7 @@ export default function FindPageContent() {
       <Helmet>
         <title>{keyword} :: SScammer-search</title>
       </Helmet>
-      <p className={"text-4xl font-bold mb-10 mr-auto"}>Scam cases</p>
+      <p className={"text-4xl font-bold my-10 mr-auto"}>Scam cases</p>
       <FindCard01 />
     </>
   );
