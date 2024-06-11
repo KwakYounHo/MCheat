@@ -5,7 +5,6 @@ import { ResultLengthContextProvider } from "./context/result-length";
 
 import Keyword from "./page";
 import NotFound from "@/app/not-found/page";
-import Detail from "./detail/page";
 
 export default function KeywordRouter() {
   return (
@@ -13,7 +12,6 @@ export default function KeywordRouter() {
       <ResultLengthContextProvider>
         <Routes>
           <Route path={"/"} element={<Keyword />} />
-          <Route path={"/:id"} element={<Detail />} />
           <Route path={"*"} element={<NotFound />} />
         </Routes>
       </ResultLengthContextProvider>
