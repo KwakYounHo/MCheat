@@ -29,13 +29,17 @@ import style from "@/app/find/keyword/keyword.module.css";
 // find page card-search table
 export default function FindCard01() {
   const { resultLength } = useResultLengthContext();
-  const { keyword } = useKeywordContext();
 
   return (
     <Card className={"w-full animation-in"}>
       <CardHeader>
         <CardTitle>Search Results</CardTitle>
-        <CardDescription>Your Keyword : {keyword}</CardDescription>
+        <CardDescription>
+          <p>
+            Rows with a red background contain detailed information. Click to
+            view the details!
+          </p>
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <Table className={style.tableWrapper}>
