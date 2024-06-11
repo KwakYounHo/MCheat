@@ -18,7 +18,12 @@ export default function KeywordLayout() {
       <Helmet>
         <title>{keyword} :: SScammer-search</title>
       </Helmet>
-      <p className={"text-4xl font-bold my-10 mr-auto"}>Scam cases</p>
+      <div className={"my-10 mr-auto"}>
+        <p className={"text-4xl font-bold"}>Scam cases</p>
+        <p className={"text-sm text-muted-foreground"}>
+          Your keyword : {keyword}
+        </p>
+      </div>
       <FindCard01 />
     </>
   );
