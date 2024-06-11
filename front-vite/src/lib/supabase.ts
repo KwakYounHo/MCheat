@@ -13,6 +13,7 @@ export type Database = {
         Row: {
           bank_account: string | null
           detail: string | null
+          entered_at: string | null
           mobile_number: string | null
           name: string | null
           place_of_issue_occur: string
@@ -21,6 +22,7 @@ export type Database = {
         Insert: {
           bank_account?: string | null
           detail?: string | null
+          entered_at?: string | null
           mobile_number?: string | null
           name?: string | null
           place_of_issue_occur: string
@@ -29,6 +31,7 @@ export type Database = {
         Update: {
           bank_account?: string | null
           detail?: string | null
+          entered_at?: string | null
           mobile_number?: string | null
           name?: string | null
           place_of_issue_occur?: string
