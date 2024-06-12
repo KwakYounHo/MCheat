@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
-import { KeywordContextProvider } from "./context/keyword";
-import { ResultLengthContextProvider } from "./context/result-length";
+import { KeywordContextProvider } from "@/utils//context/keyword";
+import { ResultLengthContextProvider } from "@/utils/context/result-length";
 
 import Keyword from "./page";
 import NotFound from "@/app/not-found/page";

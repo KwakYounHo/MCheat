@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 
 import { useParams } from "react-router-dom";
 
-import { useKeywordContext } from "./context/keyword";
+import { useKeywordContext } from "@/utils/context/keyword";
 
 import FindCard01 from "@/app/find/keyword/card01/card";
 
