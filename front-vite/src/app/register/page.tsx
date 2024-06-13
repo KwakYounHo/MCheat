@@ -28,6 +28,8 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
+import { RocketIcon } from "lucide-react";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 import style from "./register.module.css";
 
@@ -190,6 +192,17 @@ export default function Register() {
           </div>
         </form>
       </Form>
+      {isPending && (
+        <div className="fixed w-screen h-screen top-0 z-50 bg-black/50 flex justify-center items-center">
+          <Alert className={"w-10/12 max-w-[500px]"}>
+            <RocketIcon className={"w-5 h-5"} />
+            <AlertTitle className={"text-xl"}>Please wait...</AlertTitle>
+            <AlertDescription>
+              Sending your data at server... please wait!
+            </AlertDescription>
+          </Alert>
+        </div>
+      )}
     </>
   );
 }
