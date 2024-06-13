@@ -1,13 +1,14 @@
 // package
-import { useResultLengthContext } from "@/app/find/keyword/context/result-length";
 import database from "@/utils/supabase/client";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, type Dispatch, type SetStateAction } from "react";
 import timeCal from "@/utils/timezoneCalculator";
+import { useSearchData } from "@/utils/context/search-data";
+import { pagination } from "@/utils/paginator";
 
 // context
-import { useKeywordContext } from "@/app/find/keyword/context/keyword";
+import { useKeywordContext } from "@/utils/context/keyword";
 
 // ui
 import { TableRow, TableCell } from "@/components/ui/table";
@@ -20,10 +21,15 @@ import {
 
 import style from "@/app/find/keyword/keyword.module.css";
 
+type Props = {
+  currentPage: number;
+  setCurrentPage?: Dispatch<SetStateAction<number>>;
+};
+
 // find table's data component
-export default function TableData() {
-  const { setResultLength } = useResultLengthContext();
+export default function TableData({ currentPage }: Props) {
   const { keyword } = useKeywordContext();
+  const { setData } = useSearchData();
 
   const queryKey = [keyword];
   const queryFn = async () => {
@@ -42,14 +48,16 @@ export default function TableData() {
   });
 
   useEffect(() => {
-    if (data) setResultLength(data.length);
+    if (data) {
+      setData(data);
+    }
   }, [data]);
 
   if (data) {
     return (
       <>
         {data.length > 0 ? (
-          data.map((e) => {
+          pagination(data, currentPage).map((e) => {
             return (
               // case data list
               e.detail ? (

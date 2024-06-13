@@ -5,7 +5,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { Link } from "react-router-dom";
 
 // context
-import { useKeywordContext } from "@/app/find/keyword/context/keyword";
+import { useKeywordContext } from "@/utils/context/keyword";
 
 // comp
 import TableData from "./table-data";
@@ -17,8 +17,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 import style from "@/app/find/keyword/keyword.module.css";
 
+type Props = React.ComponentProps<typeof TableData>;
+
 // find table root component
-export default function TableRowLayout() {
+export default function TableRowLayout({ currentPage }: Props) {
   const { keyword } = useKeywordContext();
   return (
     <QueryErrorResetBoundary>
@@ -63,7 +65,7 @@ export default function TableRowLayout() {
                 </TableRow>
               }
             >
-              <TableData />
+              <TableData currentPage={currentPage} />
             </React.Suspense>
           </ErrorBoundary>
         );
