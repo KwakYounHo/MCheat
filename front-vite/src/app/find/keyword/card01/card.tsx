@@ -94,6 +94,11 @@ export default function FindCard01() {
                             onClick={() => {
                               if (currentPage !== e) setCurrentPage(e);
                             }}
+                            className={
+                              currentPage !== e
+                                ? "cursor-pointer"
+                                : "text-muted-foreground hover:text-muted-foreground"
+                            }
                           >
                             {e}
                           </PaginationLink>
