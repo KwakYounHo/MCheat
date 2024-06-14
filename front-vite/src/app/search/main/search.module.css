@@ -1,31 +1,58 @@
-.logo {
+.searchPageWrapper {
+  @apply w-full flex flex-col justify-center items-center gap-6
+}
+
+.searchPageWrapper .logo {
   @apply w-1/2 max-w-[400px]
 }
 
-.description {
+.searchPageWrapper .description {
   @apply text-muted-foreground text-sm
 }
 
-.formContent {
+.searchPageWrapper .formContent {
   @apply w-full flex flex-col justify-center items-center
 }
 
-.formFieldWrapper {
+.formContent .formFieldWrapper {
   @apply flex flex-col items-center gap-4
 }
 
-.formItem {
+.formContent .formItem {
   @apply flex justify-center w-screen
 }
 
-.inputButtonWrapper {
+.formContent .inputButtonWrapper {
   @apply relative flex justify-center w-full max-w-[1200px] mx-10 h-screen max-h-[80px]
 }
 
-.inputButtonWrapper .inputContent {
+.formContent .inputContent {
   @apply rounded-full h-full pl-6 pr-[85px] w-full min-w-[190px] text-lg placeholder:text-sm
 }
 
-.inputButtonWrapper .buttonContent {
+.formContent .buttonContent {
   @apply absolute top-0 right-0 rounded-full w-full h-full min-w-[80px] max-w-[80px] max-h-[80px]
+}
+
+.searchPageWrapper .accordionWrapper {
+  @apply w-full max-w-[1000px]
+}
+
+.accordionWrapper .alertWrapper {
+  @apply max-w-[1000px] flex flex-col gap-4 border-dashed
+}
+
+.accordionWrapper svg {
+  @apply w-4 h-4
+  }
+
+.accordionWrapper button > div {
+  @apply flex gap-2
+}
+.alertWrapper h5 {
+  @apply text-base lg:text-lg capitalize
+}
+
+.alertWrapper div > div {
+  @apply text-muted-foreground
 }
