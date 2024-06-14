@@ -126,8 +126,9 @@ export default function SearchPage() {
                   <MessageCircleWarningIcon />
                   <AlertTitle>Verification is required</AlertTitle>
                   <AlertDescription>
-                    The search results for “SScammer” are user-generated content
-                    on this website. Please use this website for reference only!
+                    All scam reports are user-generated on this website.
+                    Verification may be required, and search results should be
+                    used for reference only.
                   </AlertDescription>
                 </Alert>
               </div>

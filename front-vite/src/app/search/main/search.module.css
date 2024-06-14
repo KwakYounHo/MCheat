@@ -35,11 +35,11 @@
 }
 
 .searchPageWrapper .accordionWrapper {
-  @apply w-full max-w-[1000px]
+  @apply w-full max-w-[750px]
 }
 
 .accordionWrapper .alertWrapper {
-  @apply max-w-[1000px] flex flex-col gap-4 border-dashed
+  @apply flex flex-col gap-4 border-dashed
 }
 
 .accordionWrapper svg {
