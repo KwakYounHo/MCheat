@@ -188,12 +188,14 @@ export default function Register() {
             }}
           />
           <div className={style.buttonWrapper}>
-            <Button type={"submit"}>submit</Button>
+            <Button type={"submit"}>
+              {isPending ? "saving..." : "submit"}
+            </Button>
           </div>
         </form>
       </Form>
       {isPending && (
-        <div className="fixed w-screen h-screen top-0 z-50 bg-black/50 flex justify-center items-center">
+        <div className={style.pendingAlert}>
           <Alert className={"w-10/12 max-w-[500px]"}>
             <RocketIcon className={"w-5 h-5"} />
             <AlertTitle className={"text-xl"}>Please wait...</AlertTitle>

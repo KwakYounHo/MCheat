@@ -79,7 +79,7 @@ export default function TableData({ currentPage }: Props) {
                       "w-full max-w-[80vw] h-full max-h-[30vh] overflow-auto flex flex-col gap-4"
                     }
                   >
-                    <div>
+                    <div className={"border-b pb-4"}>
                       <p className={"capitalize text-lg"}>detail</p>
                       <p className={"text-muted-foreground text-sm"}>
                         Scammed case details entered by the user
