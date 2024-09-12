@@ -154,7 +154,7 @@ export default function Register() {
               return (
                 <FormItem>
                   <FormLabel className={"!normal-case"}>
-                    Place of issue occur <strong>*</strong>
+                    Incident Location <strong>*</strong>
                   </FormLabel>
                   <FormControl>
                     <Input
